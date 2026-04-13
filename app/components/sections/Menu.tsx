@@ -1,16 +1,19 @@
 import Image from "next/image"
+import Button from "../ui/Button"
 
 export default function Menu() {
     return (
-        <div className="container flex flex-row justify-center items-center">
-            <div className="w-full border-white/10 border-solid border-[1.3px] rounded-full py-[35px] px-[59px] flex flex-row items-center justify-center gap-[50px]">
+        <div className="container flex flex-row justify-center items-center px-4 max-w-[1280px] mx-auto ">
+            <div className="w-full border-white/10 border-solid border-[1.3px] rounded-full py-[35px] px-[59px] flex flex-row items-center justify-between bg-white/5 shadow-glass">
                 <Image src="/Logo-Brand-Collective-White-PNG_1.png" alt="Logo" width={336} height={100} />
-                <ul className="flex flex-row gap-5 text-lg">
-                    <li>Inicio</li>
-                    <li>F.A.Q</li>
-                    <li>Contato</li>
-                </ul>
-                <button className="bg-linear">Quero meu pack</button>
+                <div className="flex flex-row items-center gap-[50px]">
+                    <ul className="flex flex-row text-[20px] text-white gap-[39px]">
+                        <li>Ínicio</li>
+                        <li>F.A.Q</li>
+                        <li>Contato</li>
+                    </ul>
+                    <Button className="cursor-pointer">Quero meu pack</Button>
+                </div>
             </div>
         </div>
     )

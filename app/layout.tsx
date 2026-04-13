@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Poppins, Pragati_Narrow } from "next/font/google";
 import "./globals.css";
 
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-poppins",
+  display: "swap"
+});
+
+const Pragati = Pragati_Narrow({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-pragati",
   display: "swap"
 });
 
@@ -22,7 +30,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${poppins.className} h-full antialiased`}
+      className={`${poppins.variable} ${Pragati.variable} font-sans h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
