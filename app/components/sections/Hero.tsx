@@ -48,7 +48,7 @@ export default function Hero() {
                 style={{ paddingLeft: "max(16px, calc((100vw - 1280px) / 2 + 16px))" }}
             >
                 {/* Coluna esquerda — largura fixa, alinhada com o menu */}
-                <div className="shrink-0 flex flex-col gap-[30px] z-10 max-w-[760px]">
+                <div className="flex flex-col gap-[30px] z-10 lg:max-w-[760px]">
                     <Badge
                         className="px-16"
                         icon={
