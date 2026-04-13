@@ -32,12 +32,20 @@ body {
 
 @layer components {
   .title-hero {
-    @apply text-[70px] font-pragati leading-[1.1] tracking-tight;
+    @apply text-[48px] font-pragati leading-[1.1] tracking-tight md:text-[70px];
   }
+
   .subtitle-hero {
     @apply text-[20px] text-[#838383] font-medium;
   }
+
   .highlight-primary {
     @apply text-primary font-bold;
+  }
+
+  @variant md {
+    .title-hero {
+      @apply text-[70px];
+    }
   }
 }
