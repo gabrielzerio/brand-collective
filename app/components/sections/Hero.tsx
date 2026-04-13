@@ -26,9 +26,9 @@ export default function Hero() {
             />
 
             {/* Menu no seu container centralizado em 1280px */}
-            <div className="mx-auto px-4">
-                <Menu />
-            </div>
+
+            <Menu />
+
 
             {/*
              * A section é full-width sem max-w, mas recebe um
@@ -44,7 +44,7 @@ export default function Hero() {
              * que a contenha.
              */}
             <section
-                className="flex flex-row items-center mt-32 text-[16px] relative"
+                className="flex flex-row items-center mt-32 text-[16px] relative sm:flex-col"
                 style={{ paddingLeft: "max(16px, calc((100vw - 1280px) / 2 + 16px))" }}
             >
                 {/* Coluna esquerda — largura fixa, alinhada com o menu */}

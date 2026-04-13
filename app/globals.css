@@ -32,7 +32,7 @@ body {
 
 @layer components {
   .title-hero {
-    @apply text-[48px] font-pragati leading-[1.1] tracking-tight md:text-[70px];
+    @apply text-[48px] font-pragati  tracking-tight ;
   }
 
   .subtitle-hero {
