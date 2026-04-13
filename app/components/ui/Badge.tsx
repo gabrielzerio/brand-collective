@@ -10,7 +10,7 @@ export default function Badge({ children, icon, className = "" }: BadgeProps) {
   return (
     <div
       className={`
-        flex items-center gap-2 px-10 py-3 rounded-full w-fit
+        flex items-center gap-2 px-10 py-3 rounded-full w-fit 
         text-[16px]  font-medium
         ${className}
       `}

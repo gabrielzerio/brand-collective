@@ -11,7 +11,7 @@ export default function Hero() {
          * Wrapper full-width — sem overflow-hidden para
          * não cortar a imagem que vaza à direita.
          */
-        <div className="w-full relative mt-11">
+        <div className="w-full relative mt-[43px]">
 
             {/* Background Glow */}
             <div className="absolute top-[-10%] right-0 w-[50vw] h-[10vw] bg-accent/30 rounded-full blur-[120px] pointer-events-none z-0" />
@@ -44,11 +44,11 @@ export default function Hero() {
              * que a contenha.
              */}
             <section
-                className="flex flex-row items-center mt-32 text-[16px] relative sm:flex-col"
+                className="flex flex-col md:flex-row md:items-center mt-16 md:mt-28 text-[16px] relative px-4 md:px-0"
                 style={{ paddingLeft: "max(16px, calc((100vw - 1280px) / 2 + 16px))" }}
             >
                 {/* Coluna esquerda — largura fixa, alinhada com o menu */}
-                <div className="flex flex-col gap-[30px] z-10 lg:max-w-[760px]">
+                <div className="flex flex-col gap-[24px] md:gap-[30px] z-10 w-full md:max-w-[760px] shrink ">
                     <Badge
                         className="px-16"
                         icon={
@@ -84,7 +84,7 @@ export default function Hero() {
                  * Sem max-width: a imagem se posiciona naturalmente
                  * e vaza além do viewport à direita.
                  */}
-                <div className="shrink relative -ml-12">
+                <div className="hidden md:block shrink-0 relative -ml-12">
                     <Image
                         src="/MacBook-Mockup-Template-PNG_1.png"
                         alt="MacBook Mockup"
@@ -100,7 +100,7 @@ export default function Hero() {
                         items={2}
                         value="459,83"
                         rotation={-6.5}
-                        className="absolute -top-10 -left-10 z-20"
+                        className="absolute top-0 left-10 z-20"
                     />
 
                     <NotificationPopUp

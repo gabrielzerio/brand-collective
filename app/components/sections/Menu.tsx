@@ -4,7 +4,7 @@ import Button from "../ui/Button"
 export default function Menu() {
     return (
         <div className="container flex flex-row justify-center items-center px-4 max-w-[1280px] mx-auto">
-            <div className="w-full border-white/10 border-solid border-[1.3px] rounded-[2rem] md:rounded-full py-6 md:py-[35px] px-6 md:px-[59px] flex flex-col md:flex-row items-center justify-between bg-white/5 shadow-glass gap-6 md:gap-0">
+            <div className="w-full border-white/10 border-solid border-[1.3px] rounded-full py-6 md:py-[35px] px-6 md:px-[59px] flex flex-col md:flex-row items-center justify-between bg-white/5 shadow-glass gap-6 md:gap-0">
                 {/* Logo - Tamanho reduzido no mobile */}
                 <div className="flex-shrink-0">
                     <Image 

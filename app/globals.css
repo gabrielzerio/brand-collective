@@ -12,7 +12,7 @@
   --color-primary-light: #EEFF55;
   --color-primary-dark: #CBE200;
   --color-accent: #E0DC01;
-  --shadow-glass: inset 0px 2.3px 0px 2.3px rgba(255, 255, 255, 0.1), 0px 18.37px 73.46px 0px rgba(0, 0, 0, 0.37);
+  
   --font-sans: var(--font-poppins);
   --font-mono: var(--font-geist-mono);
   --font-pragati: var(--font-pragati);
@@ -32,7 +32,7 @@ body {
 
 @layer components {
   .title-hero {
-    @apply text-[48px] font-pragati  tracking-tight ;
+    @apply text-[48px] leading-[1.1] font-pragati tracking-tight ;
   }
 
   .subtitle-hero {
