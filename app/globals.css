@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-primary: #E1FA00;
+  --color-primary: #E0DC01;
   --color-primary-light: #EEFF55;
   --color-primary-dark: #CBE200;
   --color-accent: #E0DC01;
@@ -18,27 +18,53 @@
   --font-pragati: var(--font-pragati);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
 }
 
+/* ── Section Heading System (from Figma) ── */
 @layer components {
-  .title-hero {
-    @apply text-[48px] leading-[1.1] font-pragati tracking-tight ;
+  /* Badge pill — Figma: bg rgba(255,255,255,0.05), border rgba(225,250,0,0.2) */
+  .section-badge {
+    @apply flex items-center gap-2.5 px-8 py-[15px] rounded-full w-fit text-[16px] font-medium;
+    background: rgba(255, 255, 255, 0.05);
+    border: 0.73px solid rgba(225, 250, 0, 0.2);
+    box-shadow:
+      0px 0.73px 0px 0.73px rgba(255, 255, 255, 0.1) inset,
+      0px 5.8px 23.21px 0px rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(8.7px);
+    -webkit-backdrop-filter: blur(8.7px);
   }
 
+  .section-badge-dot {
+    @apply w-2 h-2 rounded-full;
+    background: #E0DC01;
+  }
+
+  /* Section title — Figma: Pragati Narrow 400, 70px, lh 0.987, ls -2%, center */
+  .section-title {
+    @apply font-pragati text-center text-white;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 0.987em;
+    letter-spacing: -0.02em;
+    text-shadow: 6.08px 6.08px 26.71px rgba(0, 0, 0, 1);
+  }
+
+  /* Section subtitle — Figma: Poppins 500 20px, color #838383, center */
+  .section-subtitle {
+    @apply text-[20px] font-medium text-center;
+    color: #838383;
+  }
+
+  /* Hero specific */
+  .title-hero {
+    @apply text-[48px] leading-[1.1] font-pragati tracking-tight;
+  }
   .subtitle-hero {
     @apply text-[20px] text-[#838383] font-medium;
   }
-
   .highlight-primary {
     @apply text-primary font-bold;
   }
@@ -47,5 +73,35 @@ body {
     .title-hero {
       @apply text-[70px];
     }
+  }
+
+  /* Trust indicator pills — Figma: Pragati Narrow 700 36px lh 0.952 ls -2% */
+  .trust-text {
+    font-family: var(--font-pragati);
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 0.952em;
+    letter-spacing: -0.02em;
+    text-shadow: 3.12px 3.12px 13.68px rgba(0, 0, 0, 1);
+  }
+
+  /* Step title — Figma: Pragati Narrow 400 36px ls -2% */
+  .step-title {
+    font-family: var(--font-pragati);
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 0.952em;
+    letter-spacing: -0.02em;
+    text-shadow: 3.12px 3.12px 13.68px rgba(0, 0, 0, 1);
+  }
+
+  /* Step number — Figma: Pragati Narrow 700 ~39px black */
+  .step-number {
+    font-family: var(--font-pragati);
+    font-weight: 700;
+    font-size: 39px;
+    line-height: 0.946em;
+    letter-spacing: -0.02em;
+    color: #000;
   }
 }

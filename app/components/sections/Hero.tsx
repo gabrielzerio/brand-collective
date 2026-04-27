@@ -1,16 +1,11 @@
-import Menu from "./Menu"
+import Image from "next/image"
 import Badge from "../ui/Badge"
 import Button from "../ui/Button"
 import RatingBadge from "../ui/RatingBadge"
 import NotificationPopUp from "../ui/NotificationPopUp"
-import Image from "next/image"
 
 export default function Hero() {
     return (
-        /*
-         * Wrapper full-width — sem overflow-hidden para
-         * não cortar a imagem que vaza à direita.
-         */
         <div className="w-full relative mt-[43px]">
 
             {/* Background Glow */}
@@ -25,30 +20,14 @@ export default function Hero() {
                 className="absolute -top-68 right-0 pointer-events-none z-0 opacity-80"
             />
 
-            {/* Menu no seu container centralizado em 1280px */}
-
             <Menu />
 
-
-            {/*
-             * A section é full-width sem max-w, mas recebe um
-             * padding-left calculado para o conteúdo da esquerda
-             * começar exatamente onde o container de 1280px começa.
-             *
-             * calc((100vw - 1280px) / 2 + 16px):
-             *   - (100vw - 1280px) / 2 → margem lateral do container
-             *   - + 16px → equivalente ao px-4 do container do Menu
-             *   - max(16px, ...) → em viewports < 1280px usa 16px mínimo
-             *
-             * Com isso, a imagem da direita vaza livremente sem nada
-             * que a contenha.
-             */}
             <section
                 className="flex flex-col md:flex-row md:items-center mt-16 md:mt-28 text-[16px] relative px-4 md:px-0"
                 style={{ paddingLeft: "max(16px, calc((100vw - 1280px) / 2 + 16px))" }}
             >
-                {/* Coluna esquerda — largura fixa, alinhada com o menu */}
-                <div className="flex flex-col gap-[24px] md:gap-[30px] z-10 w-full md:max-w-[760px] shrink ">
+                {/* Left Column */}
+                <div className="flex flex-col gap-[24px] md:gap-[30px] z-10 w-full md:max-w-[760px] shrink-0">
                     <Badge
                         className="px-16"
                         icon={
@@ -79,11 +58,7 @@ export default function Hero() {
                     </div>
                 </div>
 
-                {/*
-                 * Coluna direita — shrink-0 para não ser espremida.
-                 * Sem max-width: a imagem se posiciona naturalmente
-                 * e vaza além do viewport à direita.
-                 */}
+                {/* Right Column — MacBook */}
                 <div className="hidden md:block shrink-0 relative -ml-12">
                     <Image
                         src="/MacBook-Mockup-Template-PNG_1.png"
@@ -113,6 +88,42 @@ export default function Hero() {
                     />
                 </div>
             </section>
+        </div>
+    )
+}
+
+function Menu() {
+    return (
+        <div className="container flex flex-row justify-center items-center px-4 max-w-[1280px] mx-auto">
+            <div
+                className="w-full rounded-full py-6 md:py-[35px] px-6 md:px-[59px] flex flex-col md:flex-row items-center justify-between gap-6 md:gap-0"
+                style={{
+                    background: "rgba(255, 255, 255, 0.05)",
+                    border: "1px solid rgba(255, 255, 255, 0.1)",
+                    boxShadow: "0px 18.37px 73.46px 0px rgba(0,0,0,0.37), inset 0px 2.3px 0px 2.3px rgba(255,255,255,0.1)",
+                    backdropFilter: "blur(27.55px)",
+                    WebkitBackdropFilter: "blur(27.55px)",
+                }}
+            >
+                <div className="flex-shrink-0">
+                    <Image
+                        src="/Logo-Brand-Collective-White-PNG_1.png"
+                        alt="Logo"
+                        width={337}
+                        height={80}
+                        className="w-[180px] md:w-[337px] h-auto object-contain"
+                    />
+                </div>
+
+                <div className="flex flex-row items-center justify-between md:justify-end w-full md:w-auto gap-4 md:gap-[39px]">
+                    <ul className="flex flex-row text-[14px] md:text-[20px] text-white gap-4 md:gap-[39px] font-medium">
+                        <li><a href="#" className="hover:text-primary transition-colors">Ínicio</a></li>
+                        <li><a href="#faq" className="hover:text-primary transition-colors">F.A.Q</a></li>
+                        <li><a href="#contato" className="hover:text-primary transition-colors">Contato</a></li>
+                    </ul>
+                    <Button className="cursor-pointer text-sm md:text-base">Quero meu pack</Button>
+                </div>
+            </div>
         </div>
     )
 }
