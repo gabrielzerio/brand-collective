@@ -1,5 +1,5 @@
 {/*
-  Figma: Frame 109 (511:265) — "Por que a Brand Collective?"
+  Figma: Frame 109 (511:265) â€” "Por que a Brand Collective?"
   3 feature cards in a row, 400x449 each, gap 40px
   Each card: border 1px MAIN GREEN, rounded-25
   Inside: padding 19px, column gap 40px

@@ -28,7 +28,7 @@ export default function GallerySection() {
                     </div>
                 </div>
 
-                {/* Gallery cards — 5 items, 383x383 each */}
+                {/* Gallery cards â€” 5 items, 383x383 each */}
                 <div className="flex flex-col md:flex-row items-center gap-[28px] w-full justify-center">
                     {[
                         "/images/mockup-gallery-1.png",

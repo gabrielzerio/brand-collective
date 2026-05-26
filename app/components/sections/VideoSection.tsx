@@ -1,10 +1,10 @@
 {/* 
   Figma: Frame 103 (511:94)
   - Badge "Como funciona?" 
-  - Title "Assista ao vídeo abaixo" — Pragati 70px
-  - Subtitle — Poppins 500 20px #838383
-  - Video box — green (#E0DC01) rounded-[40px], 569h, play icon center
-  - Trust indicators row — 3 groups (shield + text pill)
+  - Title "Assista ao vídeo abaixo" â€” Pragati 70px
+  - Subtitle â€” Poppins 500 20px #838383
+  - Video box â€” green (#E0DC01) rounded-[40px], 569h, play icon center
+  - Trust indicators row â€” 3 groups (shield + text pill)
 */}
 
 import { ShieldCheck, Clock, Star, Play } from "lucide-react";
@@ -30,7 +30,7 @@ export default function VideoSection() {
                     </div>
                 </div>
 
-                {/* Video Placeholder — Figma: fill #E0DC01, rounded 40px, 569h */}
+                {/* Video Placeholder â€” Figma: fill #E0DC01, rounded 40px, 569h */}
                 <div
                     className="w-full rounded-[40px] flex items-center justify-center relative overflow-hidden cursor-pointer group"
                     style={{
@@ -40,9 +40,9 @@ export default function VideoSection() {
                 >
                     {/* Play button group */}
                     <div className="relative w-[94px] h-[94px]">
-                        {/* Outer circle — 35% opacity black */}
+                        {/* Outer circle â€” 35% opacity black */}
                         <div className="absolute inset-0 bg-black/35 rounded-full" />
-                        {/* Inner circle — solid black */}
+                        {/* Inner circle â€” solid black */}
                         <div className="absolute inset-[9px] bg-black rounded-full flex items-center justify-center">
                             <Play size={30} className="text-white ml-1" fill="white" />
                         </div>
@@ -50,7 +50,7 @@ export default function VideoSection() {
                 </div>
             </div>
 
-            {/* Trust Indicators — Figma: 3 groups spanning full 1280w, gap between */}
+            {/* Trust Indicators â€” Figma: 3 groups spanning full 1280w, gap between */}
             <div className="flex flex-col md:flex-row items-center justify-between mt-[80px] gap-8">
                 <TrustItem icon={<ShieldCheck size={34} />} text="Garantia de 7 dias" />
                 <TrustItem icon={<Clock size={34} />} text="Acesso imediato" />
@@ -63,7 +63,7 @@ export default function VideoSection() {
 function TrustItem({ icon, text }: { icon: React.ReactNode; text: string }) {
     return (
         <div className="flex items-center gap-0">
-            {/* Icon circle — gradient bg, green glow */}
+            {/* Icon circle â€” gradient bg, green glow */}
             <div
                 className="w-[75px] h-[75px] rounded-full flex items-center justify-center shrink-0 relative z-10"
                 style={{

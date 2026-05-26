@@ -1,7 +1,7 @@
 export default function RatingBadge() {
   return (
     <div
-      className="flex items-center gap-6 px-10 py-5 rounded-full w-fit relative group"
+      className="flex h-[53px] w-[316px] items-center gap-4 rounded-full px-6 py-2 md:h-auto md:w-fit md:gap-6 md:px-10 md:py-5 relative group"
       style={{
         background: "linear-gradient(black, black) padding-box, linear-gradient(90deg, var(--color-accent) 0%, #58583B 100%) border-box",
         border: "1.94px solid transparent",
@@ -9,11 +9,11 @@ export default function RatingBadge() {
       }}
     >
       {/* Avatar Stack */}
-      <div className="flex -space-x-4">
+      <div className="flex -space-x-3 md:-space-x-4">
         {[1, 2, 3, 4].map((i) => (
           <div
             key={i}
-            className="w-10 h-10 rounded-full border-2 border-black bg-primary-light flex items-center justify-center text-[10px] font-bold select-none"
+            className="w-[29px] h-[29px] md:w-10 md:h-10 rounded-full border-2 border-black bg-primary-light flex items-center justify-center text-[10px] font-bold select-none"
           >
             {/* Placeholder for avatars */}
           </div>
@@ -22,7 +22,7 @@ export default function RatingBadge() {
 
       {/* Text and Rating */}
       <div className="flex flex-col gap-0.5 font-sans">
-        <p className="text-[16px] text-white font-medium leading-none">
+        <p className="text-[14px] md:text-[16px] text-white font-medium leading-none">
           Usado por <span className="text-accent font-bold">+200 Marcas</span>
         </p>
         <div className="flex items-center gap-2">
@@ -30,8 +30,8 @@ export default function RatingBadge() {
             {[1, 2, 3, 4, 5].map((i) => (
               <svg
                 key={i}
-                width="14"
-                height="14"
+                  width="13"
+                  height="13"
                 viewBox="0 0 14 14"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +43,7 @@ export default function RatingBadge() {
               </svg>
             ))}
           </div>
-          <span className="text-[14px] text-white/60 font-medium leading-none">
+          <span className="text-[12px] md:text-[14px] text-white/60 font-medium leading-none">
             (4.9 / 5.0)
           </span>
         </div>

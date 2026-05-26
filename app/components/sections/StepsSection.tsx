@@ -1,5 +1,5 @@
 {/*
-  Figma: Frame 106 (511:222) — "Simplicidade é a chave"
+  Figma: Frame 106 (511:222) â€” "Simplicidade Ã© a chave"
   Layout: badge + title + subtitle on top, then 3 step rows below
   Each step row: left image 629x353 #141414 rounded-25 | right column 543w 
   Right column: step number circle (gradient) + title pill, then description text
@@ -55,7 +55,7 @@ export default function StepsSection() {
                 <div className="flex flex-col gap-[50px] w-full">
                     {steps.map((step, i) => (
                         <div key={i} className="flex flex-col md:flex-row items-center gap-[48px] w-full">
-                            {/* Left — image placeholder */}
+                            {/* Left â€” image placeholder */}
                             <div
                                 className="w-full md:w-[629px] shrink-0 rounded-[25px] overflow-hidden relative"
                                 style={{
@@ -67,7 +67,7 @@ export default function StepsSection() {
                                 <Image src={step.image} alt={step.title} fill className="object-cover" />
                             </div>
 
-                            {/* Right — content */}
+                            {/* Right â€” content */}
                             <div className="flex flex-col gap-[40px] w-full md:w-[543px]">
                                 {/* Number + Title row */}
                                 <div className="flex items-center gap-0">

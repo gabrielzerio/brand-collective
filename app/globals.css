@@ -8,11 +8,11 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-primary: #E0DC01;
-  --color-primary-light: #EEFF55;
-  --color-primary-dark: #CBE200;
-  --color-accent: #E0DC01;
-  
+  --color-primary: #e0dc01;
+  --color-primary-light: #eeff55;
+  --color-primary-dark: #cbe200;
+  --color-accent: #e0dc01;
+
   --font-sans: var(--font-poppins);
   --font-mono: var(--font-geist-mono);
   --font-pragati: var(--font-pragati);
@@ -23,11 +23,37 @@ body {
   color: var(--foreground);
 }
 
-/* ── Section Heading System (from Figma) ── */
 @layer components {
-  /* Badge pill — Figma: bg rgba(255,255,255,0.05), border rgba(225,250,0,0.2) */
+  .page-shell {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .page-shell::before,
+  .page-shell::after {
+    content: "";
+    position: absolute;
+    width: 58vw;
+    height: 58vw;
+    border-radius: 9999px;
+    pointer-events: none;
+    z-index: -1;
+    background: radial-gradient(circle, rgba(224, 220, 1, 0.2), rgba(224, 220, 1, 0.05) 35%, transparent 67%);
+    filter: blur(20px);
+  }
+
+  .page-shell::before {
+    top: -18vw;
+    left: -43vw;
+  }
+
+  .page-shell::after {
+    top: 30vw;
+    right: -42vw;
+  }
+
   .section-badge {
-    @apply flex items-center gap-2.5 px-8 py-[15px] rounded-full w-fit text-[16px] font-medium;
+    @apply flex items-center gap-2.5 px-5 md:px-8 py-3 md:py-[15px] rounded-full w-fit text-[13px] md:text-[16px] font-medium;
     background: rgba(255, 255, 255, 0.05);
     border: 0.73px solid rgba(225, 250, 0, 0.2);
     box-shadow:
@@ -39,32 +65,33 @@ body {
 
   .section-badge-dot {
     @apply w-2 h-2 rounded-full;
-    background: #E0DC01;
+    background: #e0dc01;
   }
 
-  /* Section title — Figma: Pragati Narrow 400, 70px, lh 0.987, ls -2%, center */
   .section-title {
     @apply font-pragati text-center text-white;
     font-weight: 400;
-    font-size: 70px;
+    font-size: clamp(40px, 8.8vw, 70px);
     line-height: 0.987em;
-    letter-spacing: -0.02em;
+    letter-spacing: 0;
     text-shadow: 6.08px 6.08px 26.71px rgba(0, 0, 0, 1);
   }
 
-  /* Section subtitle — Figma: Poppins 500 20px, color #838383, center */
   .section-subtitle {
-    @apply text-[20px] font-medium text-center;
+    @apply text-[15px] md:text-[20px] font-medium text-center;
     color: #838383;
+    line-height: 1.5;
   }
 
-  /* Hero specific */
   .title-hero {
-    @apply text-[48px] leading-[1.1] font-pragati tracking-tight;
+    @apply text-[34px] leading-[0.96] font-pragati;
+    letter-spacing: 0;
   }
+
   .subtitle-hero {
-    @apply text-[20px] text-[#838383] font-medium;
+    @apply text-[15px] md:text-[20px] text-[#838383] font-medium leading-[1.5];
   }
+
   .highlight-primary {
     @apply text-primary font-bold;
   }
@@ -75,33 +102,30 @@ body {
     }
   }
 
-  /* Trust indicator pills — Figma: Pragati Narrow 700 36px lh 0.952 ls -2% */
   .trust-text {
     font-family: var(--font-pragati);
     font-weight: 700;
-    font-size: 36px;
+    font-size: clamp(24px, 2.3vw, 36px);
     line-height: 0.952em;
-    letter-spacing: -0.02em;
+    letter-spacing: 0;
     text-shadow: 3.12px 3.12px 13.68px rgba(0, 0, 0, 1);
   }
 
-  /* Step title — Figma: Pragati Narrow 400 36px ls -2% */
   .step-title {
     font-family: var(--font-pragati);
     font-weight: 400;
-    font-size: 36px;
+    font-size: clamp(27px, 2vw, 36px);
     line-height: 0.952em;
-    letter-spacing: -0.02em;
+    letter-spacing: 0;
     text-shadow: 3.12px 3.12px 13.68px rgba(0, 0, 0, 1);
   }
 
-  /* Step number — Figma: Pragati Narrow 700 ~39px black */
   .step-number {
     font-family: var(--font-pragati);
     font-weight: 700;
     font-size: 39px;
     line-height: 0.946em;
-    letter-spacing: -0.02em;
+    letter-spacing: 0;
     color: #000;
   }
 }

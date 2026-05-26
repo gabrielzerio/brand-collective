@@ -1,13 +1,13 @@
 {/*
   Figma: Footer
-  - Gradient line (linear-gradient 10%→47%→90%)
+  - Gradient line (linear-gradient 10%â†’47%â†’90%)
   - Copyright text: Poppins 500 20px, #838383
 */}
 
 export default function Footer() {
     return (
         <footer className="w-full mt-[80px] pb-[80px]">
-            {/* Gradient divider line — from Figma: fill_Q1TILY */}
+            {/* Gradient divider line â€” from Figma: fill_Q1TILY */}
             <div
                 className="max-w-[1646px] mx-auto h-[3px] mb-[80px]"
                 style={{

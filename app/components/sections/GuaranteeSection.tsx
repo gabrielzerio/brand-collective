@@ -1,8 +1,8 @@
 {/*
-  Figma: Frame 212 (511:212) — Guarantee Section
-  1280w × 460h glass card, rounded-24
+  Figma: Frame 212 (511:212) â€” Guarantee Section
+  1280w Ã— 460h glass card, rounded-24
   - Left: badge + title + subtitle + description, padding 51px left, 55px top
-  - Right: 7-day guarantee seal image, 389×389
+  - Right: 7-day guarantee seal image, 389Ã—389
 */}
 
 import Image from "next/image";
@@ -37,7 +37,7 @@ export default function GuaranteeSection() {
                     </div>
                 </div>
 
-                {/* Right — seal image */}
+                {/* Right â€” seal image */}
                 <div className="relative w-[300px] md:w-[389px] aspect-square shrink-0 md:mr-[36px]">
                     <Image
                         src="/images/guarantee-seal.png"

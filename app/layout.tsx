@@ -18,7 +18,7 @@ const Pragati = Pragati_Narrow({
 });
 
 export const metadata: Metadata = {
-  title: "Brand Collective — Crie sua marca ou coleção em minutos",
+  title: "Brand Collective - Crie sua marca ou coleção em minutos",
   description: "Mockups profissionais, vetores editáveis e mockups 3D reunidos em um único acesso. Do iniciante a quem já tem marca, tudo que você precisa pra criar ou lançar está aqui.",
 };
 

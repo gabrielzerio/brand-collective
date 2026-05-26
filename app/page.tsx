@@ -15,13 +15,13 @@ export default function Home() {
     <main className="bg-black text-white min-h-screen overflow-x-hidden">
       <Hero />
       <VideoSection />
-      <GallerySection />
       <StepsSection />
       <WhySection />
+      <GallerySection />
       <BonusSection />
       <TestimonialsSection />
-      <GuaranteeSection />
       <PricingSection />
+      <GuaranteeSection />
       <FAQ />
       <Footer />
     </main>

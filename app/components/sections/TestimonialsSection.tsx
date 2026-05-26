@@ -1,5 +1,5 @@
 {/*
-  Figma: Frame 133 (511:419) — "Aprovado por quem vive o corre"
+  Figma: Frame 133 (511:419) â€” "Aprovado por quem vive o corre"
   - Badge + Title + Subtitle
   - 2 rows of 3 testimonial cards each, gap 28px between cards
   - Each card: 24px rounded, glass bg, contains:
@@ -53,7 +53,7 @@ export default function TestimonialsSection() {
                     </div>
                 </div>
 
-                {/* Testimonial grid — 2 rows × 3 cols */}
+                {/* Testimonial grid â€” 2 rows Ã— 3 cols */}
                 <div className="flex flex-col gap-[28px] w-full">
                     {[0, 1].map((row) => (
                         <div key={row} className="flex flex-col md:flex-row gap-[28px] w-full">

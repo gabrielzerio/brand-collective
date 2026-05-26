@@ -1,7 +1,7 @@
 "use client";
 
 {/*
-  Figma: Frame 153 (511:605) — FAQ Section
+  Figma: Frame 153 (511:605) â€” FAQ Section
   Layout: horizontal row, gap 42px
   Left column (543w): badge + title + subtitle + 2 contact cards
   Right column (695w): 6 FAQ accordion items
@@ -116,7 +116,7 @@ export default function FAQ() {
                     </div>
                 </div>
 
-                {/* Right column — accordion */}
+                {/* Right column â€” accordion */}
                 <div className="flex flex-col gap-[24px] w-full md:w-[695px]">
                     {faqData.map((faq, i) => {
                         const isOpen = openIndex === i;
