@@ -9,10 +9,12 @@ import GuaranteeSection from "./components/sections/GuaranteeSection";
 import PricingSection from "./components/sections/PricingSection";
 import FAQ from "./components/sections/FAQ";
 import Footer from "./components/sections/Footer";
+import DecorativeBackground from "./components/sections/DecorativeBackground";
 
 export default function Home() {
   return (
-    <main className="bg-black text-white min-h-screen overflow-x-hidden">
+    <main className="relative isolate bg-black text-white min-h-screen overflow-x-hidden">
+      <DecorativeBackground />
       <Hero />
       <VideoSection />
       <StepsSection />

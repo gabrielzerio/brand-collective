@@ -1,7 +1,7 @@
 export default function RatingBadge() {
   return (
     <div
-      className="flex h-[53px] w-[316px] items-center gap-4 rounded-full px-6 py-2 md:h-auto md:w-fit md:gap-6 md:px-10 md:py-5 relative group"
+      className="flex h-[53px] w-[316px] items-center gap-4 rounded-full px-6 py-2 md:h-[58px] md:w-[350px] md:gap-6 md:px-[31px] md:py-0 relative group"
       style={{
         background: "linear-gradient(black, black) padding-box, linear-gradient(90deg, var(--color-accent) 0%, #58583B 100%) border-box",
         border: "1.94px solid transparent",
@@ -30,8 +30,8 @@ export default function RatingBadge() {
             {[1, 2, 3, 4, 5].map((i) => (
               <svg
                 key={i}
-                  width="13"
-                  height="13"
+                width="13"
+                height="13"
                 viewBox="0 0 14 14"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"

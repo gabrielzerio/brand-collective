@@ -7,7 +7,7 @@ export default function Button({ children, className = "", style, ...props }: Bu
     <button
       className={`
         flex items-center gap-2 md:gap-2.5 px-6 py-3 md:px-14 md:py-4 rounded-full font-bold text-[#000000]
-        text-[14px] md:text-[20px]
+        text-[14px] md:text-[18px]
         border-[1.94px] border-primary-dark
         transition-all duration-300 hover:scale-105 active:scale-95 group
         ${className}
