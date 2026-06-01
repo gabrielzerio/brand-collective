@@ -173,18 +173,8 @@ function BrandMarquee({ className = "" }: { className?: string }) {
   const items = Array.from({ length: 8 });
 
   return (
-    <div className={`relative h-[82px] overflow-hidden md:h-[112px] ${className}`}>
-      <div className="absolute left-1/2 top-[22px] flex w-[2300px] -translate-x-1/2 -rotate-[2.4deg] bg-primary text-black shadow-[0_0_40px_rgba(224,220,1,0.25)] md:top-[30px]">
-        <div className="flex whitespace-nowrap py-2 md:py-4">
-          {items.map((_, i) => (
-            <div key={i} className="flex items-center gap-4 px-3 md:px-5">
-              <span className="font-pragati text-[26px] font-bold leading-none md:text-[38px]">BRAND COLLECTIVE</span>
-              <span className="h-5 w-5 rounded-[4px] border-[3px] border-black md:h-8 md:w-8" />
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="absolute left-1/2 top-[50px] flex w-[2300px] -translate-x-1/2 rotate-[3.2deg] bg-primary text-black opacity-80 blur-[1px] md:top-[70px]">
+    <div className={`relative h-[100px] overflow-hidden md:h-[132px] ${className}`}>
+      <div className="absolute left-1/2 top-[26px] flex w-[2300px] -translate-x-1/2 -rotate-[2.4deg] bg-primary text-black shadow-[0_0_40px_rgba(224,220,1,0.25)] md:top-[36px]">
         <div className="flex whitespace-nowrap py-2 md:py-4">
           {items.map((_, i) => (
             <div key={i} className="flex items-center gap-4 px-3 md:px-5">

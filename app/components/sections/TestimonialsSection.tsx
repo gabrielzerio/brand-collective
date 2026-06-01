@@ -27,25 +27,32 @@ export default function TestimonialsSection() {
           </div>
         </div>
 
-        <div className="grid w-full gap-[20px] md:grid-cols-3 md:gap-[22px]">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <TestimonialCard key={i} {...testimonial} />
-          ))}
+        <div className="w-full overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:overflow-visible">
+          <div className="flex w-max snap-x snap-mandatory gap-[16px] px-1 sm:gap-[18px] md:gap-[20px] lg:grid lg:w-full lg:grid-cols-3 lg:gap-[22px] lg:px-0">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <TestimonialCard
+                key={i}
+                {...testimonial}
+                className="w-[82vw] snap-center sm:w-[58vw] md:w-[42vw] lg:w-auto lg:snap-align-none"
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-function TestimonialCard({ headline, body, name, rating }: {
+function TestimonialCard({ headline, body, name, rating, className }: {
   headline: string;
   body: string;
   name: string;
   rating: string;
+  className?: string;
 }) {
   return (
     <article
-      className="relative flex min-h-[310px] flex-col justify-between overflow-hidden rounded-[20px] p-[18px] md:h-[350px] md:p-[18px] lg:h-[372px] lg:p-[20px]"
+      className={`relative flex min-h-[310px] shrink-0 flex-col justify-between overflow-hidden rounded-[20px] p-[18px] md:h-[350px] md:p-[18px] lg:h-[372px] lg:p-[20px] ${className ?? ""}`}
       style={{
         background: "rgba(255, 255, 255, 0.05)",
         border: "1px solid rgba(255, 255, 255, 0.1)",

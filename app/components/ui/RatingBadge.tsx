@@ -10,7 +10,7 @@ export default function RatingBadge() {
     >
       {/* Avatar Stack */}
       <div className="hidden -space-x-3 md:flex md:-space-x-4">
-        {[1,2,3,4].map((i) => (
+        {[1,2,3].map((i) => (
           <div
             key={i}
             className="flex h-[29px] w-[29px] select-none items-center justify-center rounded-full border-2 border-black bg-primary-light text-[10px] font-bold md:h-7 md:w-7 lg:h-8 lg:w-8"

@@ -18,18 +18,22 @@ export default function VideoSection() {
           </div>
         </div>
 
-        <div
-          className="group relative flex w-full max-w-[620px] cursor-pointer items-center justify-center overflow-hidden rounded-[20px] sm:max-w-[680px] md:max-w-[720px] md:rounded-[24px] lg:max-w-[820px]"
-          style={{
-            aspectRatio: "1014 / 569",
-            minHeight: "154px",
-            background: "#E0DC01",
-          }}
-        >
-          <div className="relative h-[58px] w-[58px] md:h-[66px] md:w-[66px] lg:h-[72px] lg:w-[72px]">
-            <div className="absolute inset-0 bg-black/35 rounded-full" />
-            <div className="absolute inset-[7px] flex items-center justify-center rounded-full bg-black md:inset-[8px]">
-              <Play size={20} className="ml-1 text-white md:size-[24px] lg:size-[26px]" fill="white" />
+        <div className="relative flex w-full justify-center">
+          <BlurredBrandMarquee />
+
+          <div
+            className="group relative z-10 flex w-full max-w-[620px] cursor-pointer items-center justify-center overflow-hidden rounded-[20px] sm:max-w-[680px] md:max-w-[720px] md:rounded-[24px] lg:max-w-[820px]"
+            style={{
+              aspectRatio: "1014 / 569",
+              minHeight: "154px",
+              background: "#E0DC01",
+            }}
+          >
+            <div className="relative h-[58px] w-[58px] md:h-[66px] md:w-[66px] lg:h-[72px] lg:w-[72px]">
+              <div className="absolute inset-0 bg-black/35 rounded-full" />
+              <div className="absolute inset-[7px] flex items-center justify-center rounded-full bg-black md:inset-[8px]">
+                <Play size={20} className="ml-1 text-white md:size-[24px] lg:size-[26px]" fill="white" />
+              </div>
             </div>
           </div>
         </div>
@@ -41,6 +45,23 @@ export default function VideoSection() {
         <TrustItem icon={<Star size={22} />} text="Usado por +200 Marcas" />
       </div>
     </section>
+  );
+}
+
+function BlurredBrandMarquee() {
+  const items = Array.from({ length: 8 });
+
+  return (
+    <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 hidden w-[2300px] -translate-x-1/2 -translate-y-1/2 rotate-[3.2deg] overflow-hidden bg-primary text-black opacity-80 blur-[1px] md:flex">
+      <div className="flex whitespace-nowrap py-4">
+        {items.map((_, i) => (
+          <div key={i} className="flex items-center gap-4 px-5">
+            <span className="font-pragati text-[38px] font-bold leading-none">BRAND COLLECTIVE</span>
+            <span className="h-8 w-8 rounded-[4px] border-[3px] border-black" />
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 
