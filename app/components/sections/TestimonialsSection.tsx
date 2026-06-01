@@ -10,14 +10,14 @@ const testimonial = {
 
 export default function TestimonialsSection() {
   return (
-    <section className="max-w-[1280px] mx-auto px-4 mt-[64px] md:mt-[96px]">
-      <div className="flex flex-col items-center gap-[44px]">
-        <div className="flex max-w-[733px] flex-col items-center gap-[20px]">
-          <div className="section-badge h-[53px] w-full max-w-[361px] justify-center px-0">
+    <section className="mx-auto mt-[56px] max-w-[1180px] px-4 md:mt-[84px]">
+      <div className="flex flex-col items-center gap-[34px] md:gap-[40px]">
+        <div className="flex max-w-[680px] flex-col items-center gap-[16px] md:gap-[20px]">
+          <div className="section-badge h-[42px] w-full max-w-[312px] justify-center px-0 md:h-[48px] md:max-w-[340px] lg:h-[53px] lg:max-w-[361px]">
             <div className="section-badge-dot" />
             <span>Aprovado por quem vive o corre</span>
           </div>
-          <div className="flex flex-col items-center gap-[18px]">
+          <div className="flex flex-col items-center gap-[14px] md:gap-[16px]">
             <h2 className="section-title max-w-[695px]">
               O que os <span className="font-bold text-primary">nossos aliados</span> estão dizendo?
             </h2>
@@ -27,7 +27,7 @@ export default function TestimonialsSection() {
           </div>
         </div>
 
-        <div className="grid w-full gap-[28px] md:grid-cols-3">
+        <div className="grid w-full gap-[20px] md:grid-cols-3 md:gap-[22px]">
           {Array.from({ length: 6 }).map((_, i) => (
             <TestimonialCard key={i} {...testimonial} />
           ))}
@@ -45,7 +45,7 @@ function TestimonialCard({ headline, body, name, rating }: {
 }) {
   return (
     <article
-      className="relative flex min-h-[360px] flex-col justify-between overflow-hidden rounded-[24px] p-[22px] md:h-[410px] md:p-[22px]"
+      className="relative flex min-h-[310px] flex-col justify-between overflow-hidden rounded-[20px] p-[18px] md:h-[350px] md:p-[18px] lg:h-[372px] lg:p-[20px]"
       style={{
         background: "rgba(255, 255, 255, 0.05)",
         border: "1px solid rgba(255, 255, 255, 0.1)",
@@ -53,36 +53,36 @@ function TestimonialCard({ headline, body, name, rating }: {
         backdropFilter: "blur(12.7px)",
       }}
     >
-      <div className="pointer-events-none absolute -right-3 top-0 font-pragati text-[140px] leading-none text-primary/5">BC</div>
+      <div className="pointer-events-none absolute -right-3 top-0 font-pragati text-[110px] leading-none text-primary/5 md:text-[120px]">BC</div>
 
-      <div className="relative z-10 flex h-[229px] flex-col gap-[18px] text-white">
-        <h3 className="font-pragati text-[27px] font-bold leading-[29px] tracking-[-0.02em] text-white">
+      <div className="relative z-10 flex h-[190px] flex-col gap-[14px] text-white md:h-[200px]">
+        <h3 className="font-pragati text-[22px] font-bold leading-[24px] tracking-normal text-white md:text-[24px] md:leading-[26px]">
           <HighlightedQuote text={headline} />
         </h3>
-        <p className="text-[16px] font-medium leading-[1.45] text-white">
+        <p className="text-[13px] font-medium leading-[1.45] text-white md:text-[14px] lg:text-[15px]">
           {body}
         </p>
       </div>
 
-      <div className="relative z-10 flex flex-col gap-[40px]">
+      <div className="relative z-10 flex flex-col gap-[24px] md:gap-[28px]">
         <div className="h-[2px] w-full bg-[linear-gradient(90deg,rgba(225,250,0,0)_10%,#EEFF55_47%,rgba(225,250,0,0)_90%)] shadow-[0_0_40px_rgba(225,250,0,0.45)]" />
 
-        <div className="flex items-center gap-[18px]">
-          <div className="relative h-[77px] w-[77px] shrink-0 overflow-hidden rounded-full">
+        <div className="flex items-center gap-[14px]">
+          <div className="relative h-[58px] w-[58px] shrink-0 overflow-hidden rounded-full md:h-[64px] md:w-[64px]">
             <Image src="/images/avatar-leo.png" alt={name} fill className="object-cover" sizes="77px" />
           </div>
 
           <div className="flex flex-col gap-[4px]">
-            <span className="font-pragati text-[27px] leading-[32px] text-white">
+            <span className="font-pragati text-[22px] leading-[26px] text-white md:text-[24px] md:leading-[28px]">
               {name}
             </span>
             <div className="flex items-center gap-[8px]">
-              <div className="flex gap-[5px]">
+              <div className="flex gap-[4px]">
                 {Array.from({ length: 5 }).map((_, s) => (
-                  <Star key={s} size={17} className="text-primary" fill="#E0DC01" />
+                  <Star key={s} size={14} className="text-primary md:size-[15px]" fill="#E0DC01" />
                 ))}
               </div>
-              <span className="text-[14px] font-medium text-[#838383]">({rating})</span>
+              <span className="text-[12px] font-medium text-[#838383] md:text-[13px]">({rating})</span>
             </div>
           </div>
         </div>

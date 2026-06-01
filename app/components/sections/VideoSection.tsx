@@ -2,43 +2,43 @@ import { ShieldCheck, Clock, Star, Play } from "lucide-react";
 
 export default function VideoSection() {
   return (
-    <section className="max-w-[1280px] mx-auto px-4 mt-[64px] md:mt-[78px]">
-      <div className="flex flex-col items-center gap-[44px]">
-        <div className="flex flex-col items-center gap-[20px] max-w-[1014px]">
+    <section className="mx-auto mt-[48px] max-w-[1120px] px-4 md:mt-[64px]">
+      <div className="flex flex-col items-center gap-[26px] md:gap-[32px]">
+        <div className="flex max-w-[820px] flex-col items-center gap-[14px] md:gap-[16px]">
           <div className="section-badge">
             <div className="section-badge-dot" />
             <span>Como funciona?</span>
           </div>
 
-          <div className="flex flex-col items-center gap-[18px] w-full">
+          <div className="flex w-full flex-col items-center gap-[12px] md:gap-[14px]">
             <h2 className="section-title">Assista ao vídeo abaixo</h2>
-            <p className="section-subtitle max-w-[918px]">
+            <p className="section-subtitle max-w-[760px]">
               Veja tudo que você terá acesso e por que todo dono de marca precisa dos recursos da Brand Collective para criar ou lançar coleções de maneira rápida e prática.
             </p>
           </div>
         </div>
 
         <div
-          className="w-full max-w-[1014px] rounded-[40px] flex items-center justify-center relative overflow-hidden cursor-pointer group"
+          className="group relative flex w-full max-w-[620px] cursor-pointer items-center justify-center overflow-hidden rounded-[20px] sm:max-w-[680px] md:max-w-[720px] md:rounded-[24px] lg:max-w-[820px]"
           style={{
             aspectRatio: "1014 / 569",
-            minHeight: "260px",
+            minHeight: "154px",
             background: "#E0DC01",
           }}
         >
-          <div className="relative w-[94px] h-[94px]">
+          <div className="relative h-[58px] w-[58px] md:h-[66px] md:w-[66px] lg:h-[72px] lg:w-[72px]">
             <div className="absolute inset-0 bg-black/35 rounded-full" />
-            <div className="absolute inset-[9px] bg-black rounded-full flex items-center justify-center">
-              <Play size={30} className="text-white ml-1" fill="white" />
+            <div className="absolute inset-[7px] flex items-center justify-center rounded-full bg-black md:inset-[8px]">
+              <Play size={20} className="ml-1 text-white md:size-[24px] lg:size-[26px]" fill="white" />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row items-center justify-between mt-[64px] md:mt-[78px] gap-8">
-        <TrustItem icon={<ShieldCheck size={34} />} text="Garantia de 7 dias" />
-        <TrustItem icon={<Clock size={34} />} text="Acesso imediato" />
-        <TrustItem icon={<Star size={34} />} text="Usado por +200 Marcas" />
+      <div className="mx-auto mt-[36px] flex max-w-[820px] flex-col items-center justify-between gap-3 md:mt-[48px] md:flex-row md:gap-4">
+        <TrustItem icon={<ShieldCheck size={22} />} text="Garantia de 7 dias" />
+        <TrustItem icon={<Clock size={22} />} text="Acesso imediato" />
+        <TrustItem icon={<Star size={22} />} text="Usado por +200 Marcas" />
       </div>
     </section>
   );
@@ -48,7 +48,7 @@ function TrustItem({ icon, text }: { icon: React.ReactNode; text: string }) {
   return (
     <div className="flex items-center gap-0">
       <div
-        className="w-[75px] h-[75px] rounded-full flex items-center justify-center shrink-0 relative z-10"
+        className="relative z-10 flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-full md:h-[48px] md:w-[48px] lg:h-[52px] lg:w-[52px]"
         style={{
           background: "linear-gradient(90deg, #E1FA00 18%, #EEFF55 100%)",
           border: "0.36px solid #CBE200",
@@ -58,7 +58,7 @@ function TrustItem({ icon, text }: { icon: React.ReactNode; text: string }) {
         <div className="text-black">{icon}</div>
       </div>
       <div
-        className="rounded-full py-[26px] px-[48px] -ml-[14px]"
+        className="-ml-[8px] rounded-full px-[18px] py-[11px] md:px-[22px] md:py-[13px] lg:px-[26px] lg:py-[14px]"
         style={{
           background: "rgba(255, 255, 255, 0.05)",
           border: "1.31px solid rgba(255, 255, 255, 0.1)",
@@ -66,7 +66,7 @@ function TrustItem({ icon, text }: { icon: React.ReactNode; text: string }) {
           backdropFilter: "blur(20.25px)",
         }}
       >
-        <span className="trust-text text-white">{text}</span>
+        <span className="trust-text text-white text-sm md:text-base lg:text-xl">{text}</span>
       </div>
     </div>
   );

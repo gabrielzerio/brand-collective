@@ -2,12 +2,12 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
 }
 
-export default function Button({ children, className = "", style, ...props }: ButtonProps) {
+export default function  Button({ children, className = "", style, ...props }: ButtonProps) {
   return (
     <button
       className={`
-        flex items-center gap-2 md:gap-2.5 px-6 py-3 md:px-14 md:py-4 rounded-full font-bold text-[#000000]
-        text-[14px] md:text-[18px]
+        flex items-center gap-2 px-3 py-3 sm:px-5 md:gap-2.5 md:px-6 md:py-2 lg:px-8 rounded-full font-bold text-[#000000]
+        text-[12px] sm:text-[13px] md:text-[14px] lg:text-[16px]
         border-[1.94px] border-primary-dark
         transition-all duration-300 hover:scale-105 active:scale-95 group
         ${className}

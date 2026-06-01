@@ -23,14 +23,14 @@ const steps = [
 
 export default function StepsSection() {
   return (
-    <section className="max-w-[1280px] mx-auto px-4 mt-[64px] md:mt-[96px]">
-      <div className="flex flex-col items-center gap-[44px]">
-        <div className="flex max-w-[714px] flex-col items-center gap-[20px]">
-          <div className="section-badge h-[53px] w-full max-w-[286px] justify-center px-0">
+    <section className="mx-auto mt-[56px] max-w-[1180px] px-4 md:mt-[84px]">
+      <div className="flex flex-col items-center gap-[34px] md:gap-[40px]">
+        <div className="flex max-w-[660px] flex-col items-center gap-[16px] md:gap-[20px]">
+          <div className="section-badge h-[42px] w-full max-w-[246px] justify-center px-0 md:h-[48px] md:max-w-[268px] lg:h-[53px] lg:max-w-[286px]">
             <div className="section-badge-dot" />
             <span>Simplicidade é a chave</span>
           </div>
-          <div className="flex w-full flex-col items-center gap-[18px]">
+          <div className="flex w-full flex-col items-center gap-[14px] md:gap-[16px]">
             <h2 className="section-title max-w-[680px]">
               Você não precisa ser designer nem fotógrafo
             </h2>
@@ -40,11 +40,11 @@ export default function StepsSection() {
           </div>
         </div>
 
-        <div className="flex w-full flex-col gap-[38px]">
+        <div className="flex w-full flex-col gap-[30px] md:gap-[34px]">
           {steps.map((step) => (
-            <div key={step.number} className="flex w-full flex-col items-center gap-[34px] md:flex-row">
+            <div key={step.number} className="flex w-full flex-col items-center gap-[24px] md:flex-row md:gap-[28px]">
               <div
-                className="relative w-full shrink-0 overflow-hidden rounded-[25px] md:w-[548px]"
+                className="relative w-full shrink-0 overflow-hidden rounded-[20px] md:w-[46%] lg:w-[510px]"
                 style={{
                   background: "#141414",
                   aspectRatio: "629 / 353",
@@ -54,10 +54,10 @@ export default function StepsSection() {
                 <Image src={step.image} alt={step.title} fill className="object-cover" sizes="629px" />
               </div>
 
-              <div className="flex w-full flex-col gap-[40px] md:w-[500px]">
+              <div className="flex w-full flex-col gap-[24px] md:w-[46%] md:gap-[30px] lg:w-[470px]">
                 <div className="flex items-center gap-0">
                   <div
-                    className="relative z-10 flex h-[64px] w-[66px] shrink-0 items-center justify-center rounded-full"
+                    className="relative z-10 flex h-[52px] w-[54px] shrink-0 items-center justify-center rounded-full md:h-[58px] md:w-[60px]"
                     style={{
                       background: "linear-gradient(90deg, #E1FA00 18%, #EEFF55 100%)",
                       border: "0.36px solid #CBE200",
@@ -67,7 +67,7 @@ export default function StepsSection() {
                     <span className="step-number">{step.number}</span>
                   </div>
                   <div
-                    className="-ml-[14px] rounded-full px-[38px] py-[21px]"
+                    className="-ml-[12px] rounded-full px-[24px] py-[15px] md:px-[30px] md:py-[18px]"
                     style={{
                       background: "rgba(255, 255, 255, 0.05)",
                       border: "1.31px solid rgba(255, 255, 255, 0.1)",
@@ -78,7 +78,7 @@ export default function StepsSection() {
                     <span className="step-title text-white">{step.title}</span>
                   </div>
                 </div>
-                <p className="text-[18px] font-medium leading-[1.5] text-white">
+                <p className="text-[14px] font-medium leading-[1.5] text-white md:text-[15px] lg:text-[16px]">
                   {step.description}
                 </p>
               </div>

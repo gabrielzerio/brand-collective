@@ -53,7 +53,7 @@ body {
   }
 
   .section-badge {
-    @apply flex items-center gap-2 px-4 md:px-6 py-2.5 md:py-3 rounded-full w-fit text-[12px] md:text-[14px] font-medium;
+    @apply flex items-center gap-2 rounded-full w-fit px-3 py-2 text-[11px] font-medium sm:px-4 sm:text-[12px] md:px-5 md:py-2.5 md:text-[13px] lg:px-6 lg:py-3 lg:text-[14px];
     background: rgba(255, 255, 255, 0.05);
     border: 0.73px solid rgba(225, 250, 0, 0.2);
     box-shadow:
@@ -71,26 +71,26 @@ body {
   .section-title {
     @apply font-pragati text-center text-white;
     font-weight: 400;
-    font-size: clamp(30px, 5.4vw, 52px);
+    font-size: 30px;
     line-height: 1em;
     letter-spacing: 0;
     text-shadow: 6.08px 6.08px 26.71px rgba(0, 0, 0, 1);
   }
 
   .section-subtitle {
-    @apply text-[13px] md:text-[16px] font-medium text-center;
+    @apply text-[12px] font-medium text-center sm:text-[13px] md:text-[14px] lg:text-[16px];
     color: #838383;
     line-height: 1.5;
   }
 
   .title-hero {
-    @apply text-[30px] font-pragati;
+    @apply text-[28px] font-pragati sm:text-[32px];
     letter-spacing: 0;
     line-height: 0.86;
   }
 
   .subtitle-hero {
-    @apply text-[13px] md:text-[16px] text-[#838383] font-medium leading-[1.5];
+    @apply text-[12px] text-[#838383] font-medium leading-[1.5] sm:text-[13px] md:text-[14px] lg:text-[16px];
   }
 
   .highlight-primary {
@@ -98,16 +98,30 @@ body {
   }
 
   @variant md {
+    .section-title {
+      font-size: 40px;
+    }
+
     .title-hero {
-      @apply text-[54px];
+      @apply text-[44px];
       line-height: 0.98;
+    }
+  }
+
+  @variant lg {
+    .section-title {
+      font-size: 46px;
+    }
+
+    .title-hero {
+      @apply text-[52px];
     }
   }
 
   .trust-text {
     font-family: var(--font-pragati);
     font-weight: 700;
-    font-size: clamp(20px, 1.7vw, 28px);
+    font-size: 18px;
     line-height: 0.952em;
     letter-spacing: 0;
     text-shadow: 3.12px 3.12px 13.68px rgba(0, 0, 0, 1);
@@ -116,7 +130,7 @@ body {
   .step-title {
     font-family: var(--font-pragati);
     font-weight: 400;
-    font-size: clamp(22px, 1.55vw, 28px);
+    font-size: 20px;
     line-height: 0.952em;
     letter-spacing: 0;
     text-shadow: 3.12px 3.12px 13.68px rgba(0, 0, 0, 1);
@@ -125,9 +139,29 @@ body {
   .step-number {
     font-family: var(--font-pragati);
     font-weight: 700;
-    font-size: 30px;
+    font-size: 26px;
     line-height: 0.946em;
     letter-spacing: 0;
     color: #000;
+  }
+
+  @variant md {
+    .trust-text {
+      font-size: 21px;
+    }
+
+    .step-title {
+      font-size: 22px;
+    }
+  }
+
+  @variant lg {
+    .trust-text {
+      font-size: 24px;
+    }
+
+    .step-title {
+      font-size: 24px;
+    }
   }
 }

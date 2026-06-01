@@ -6,34 +6,35 @@ import NotificationPopUp from "../ui/NotificationPopUp";
 
 export default function Hero() {
   return (
-    <div className="page-shell relative w-full pt-[34px] md:min-h-[820px]">
+    <div className="page-shell relative w-full pt-[34px] lg:min-h-[820px]">
       <div className="absolute left-[-45%] top-[-12%] z-0 h-[70vw] w-[70vw] rounded-full bg-accent/10 blur-[80px] pointer-events-none" />
       <div className="absolute right-[-16%] top-[10%] z-0 h-[42vw] w-[42vw] rounded-full bg-accent/10 blur-[100px] pointer-events-none" />
+      <FloatingMockups />
 
       <Image
         src="/Group_481207.svg"
         alt=""
         width={620}
         height={640}
-        className="pointer-events-none absolute -left-[210px] top-[894px] z-0 hidden opacity-70 mix-blend-screen md:block"
+        className="pointer-events-none absolute -left-[210px] top-[894px] z-0 hidden opacity-70 mix-blend-screen lg:block"
       />
       <Image
         src="/Group_481207.svg"
         alt=""
         width={886}
         height={902}
-        className="pointer-events-none absolute -right-[1016px] top-[293px] z-0 hidden opacity-50 mix-blend-screen md:block"
+        className="pointer-events-none absolute -right-[1016px] top-[293px] z-0 hidden opacity-50 mix-blend-screen lg:block"
       />
 
       <Menu />
 
       <section
-        className="relative mt-[32px] flex flex-col px-4 text-[16px] md:mt-[78px] md:flex-row md:items-start md:px-0"
+        className="relative mt-[32px] flex flex-col px-4 text-[16px] md:mt-[64px] lg:mt-[78px] lg:flex-row lg:items-start lg:px-0"
         style={{ paddingLeft: "max(16px, calc((100vw - 1280px) / 2))" }}
       >
-        <div className="z-10 flex w-full shrink-0 flex-col gap-[20px] md:max-w-[700px] md:gap-[26px]">
+        <div className="z-10 flex w-full shrink-0 flex-col gap-[20px] md:gap-[22px] lg:max-w-[700px] lg:gap-[26px]">
           <Badge
-            className="!h-[31px] !w-[287px] !max-w-[287px] justify-center !gap-[6px] !px-0 !py-0 !text-[10px] overflow-hidden whitespace-nowrap md:!h-[46px] md:!max-w-none md:!w-[430px] md:!gap-2 md:!px-5 md:!py-0 md:!text-[14px]"
+            className="!h-[31px] !w-[287px] !max-w-[287px] justify-center mx-auto md:mx-0 !gap-[6px] !px-0 !py-0 !text-[10px] overflow-hidden whitespace-nowrap md:!h-[46px] md:!max-w-none md:!w-[430px] md:!gap-2 md:!px-5 md:!py-0 md:!text-[14px]"
             icon={
               <svg className="h-[17px] w-[17px] md:h-6 md:w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7 13L12 18M12 18L17 13M12 18V6M4 21H20" className="stroke-primary" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -43,7 +44,7 @@ export default function Hero() {
             Tudo que você precisa em um <span className="font-bold">único lugar</span>
           </Badge>
 
-          <h1 className="title-hero max-w-[315px] md:max-w-[760px]">
+          <h1 className="title-hero max-w-full sm:max-w-[515px] md:max-w-[760px]">
             Crie sua <span className="highlight-primary">marca</span> ou <span className="highlight-primary">coleção</span> em{" "}
             <br className="hidden md:block" /><span className="font-bold">minutos</span>,
             <span className="text-primary font-bold"> sem gastar dinheiro</span>
@@ -51,18 +52,18 @@ export default function Hero() {
             <span className="font-bold"> fotógrafo.</span>
           </h1>
 
-          <h2 className="subtitle-hero max-w-[315px] md:max-w-[640px]">
+          <h2 className="subtitle-hero max-w-full sm:max-w-[515px] md:max-w-[640px]">
             Mockups profissionais, vetores editáveis e mockups 3D reunidos em um único acesso.
             Do iniciante a quem já tem marca, tudo que você precisa pra criar ou lançar está aqui.
           </h2>
 
-          <div className="flex flex-col items-center gap-4 sm:flex-row md:items-start md:gap-[28px]">
-            <Button className="h-[46px] w-[198px] justify-center p-0 font-semibold md:h-[54px] md:w-[238px] md:p-0">Quero meu pack</Button>
+          <div className="flex flex-row items-center gap-2 sm:gap-4 sm:flex-row md:items-start md:gap-[28px]">
+            <Button className="h-[46px] justify-center p-0 font-semibold md:h-[54px] md:w-[238px] md:p-0">Quero meu pack</Button>
             <RatingBadge />
           </div>
         </div>
 
-        <div className="relative -ml-[54px] -mt-[4px] hidden shrink-0 md:block">
+        <div className="relative -ml-[54px] -mt-[4px] hidden shrink-0 lg:block">
           <Image
             src="/MacBook-Mockup-Template-PNG_1.png"
             alt="MacBook Mockup"
@@ -92,8 +93,43 @@ export default function Hero() {
         </div>
       </section>
 
-      <BrandMarquee className="hidden md:absolute md:left-0 md:right-0 md:bottom-0 md:block" />
+      <BrandMarquee className="hidden lg:absolute lg:left-0 lg:right-0 lg:bottom-0 lg:block" />
     </div>
+  );
+}
+
+function FloatingMockups() {
+  return (
+    <>
+      <Image
+        src="/images/mockup-gallery-1.png"
+        alt=""
+        width={180}
+        height={180}
+        className="pointer-events-none absolute left-[-30px] top-[148px] z-0 w-[118px] rotate-[-11deg] rounded-[14px] object-cover opacity-18 blur-[0.7px] md:hidden"
+      />
+      <Image
+        src="/images/mockup-gallery-4.png"
+        alt=""
+        width={180}
+        height={180}
+        className="pointer-events-none absolute right-[-34px] top-[226px] z-0 w-[126px] rotate-[9deg] rounded-[14px] object-cover opacity-15 blur-[1px] md:hidden"
+      />
+      <Image
+        src="/images/mockup-gallery-3.png"
+        alt=""
+        width={180}
+        height={180}
+        className="pointer-events-none absolute right-[8%] top-[418px] z-0 w-[84px] rotate-[14deg] rounded-[12px] object-cover opacity-16 blur-[0.8px] md:hidden"
+      />
+      <Image
+        src="/images/mockup-gallery-5.png"
+        alt=""
+        width={180}
+        height={180}
+        className="pointer-events-none absolute left-[14px] top-[392px] z-0 w-[96px] rotate-[-8deg] rounded-[12px] object-cover opacity-14 blur-[0.9px] md:hidden"
+      />
+    </>
   );
 }
 
@@ -116,7 +152,7 @@ function Menu() {
             alt="Logo"
             width={337}
             height={80}
-            className="h-auto w-[178px] object-contain md:w-[250px]"
+            className="h-auto w-[178px] object-contain md:w-[150px] lg:w-[200px]"
           />
         </div>
 

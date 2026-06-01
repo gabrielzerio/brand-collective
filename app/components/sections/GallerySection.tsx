@@ -10,14 +10,14 @@ const galleryItems = [
 
 export default function GallerySection() {
   return (
-    <section className="max-w-[2027px] mx-auto px-4 mt-[64px] md:mt-[96px]">
-      <div className="flex flex-col items-center gap-[44px]">
-        <div className="flex max-w-[749px] flex-col items-center gap-[20px]">
-          <div className="section-badge h-[53px] w-full max-w-[311px] justify-center px-0">
+    <section className="mx-auto mt-[56px] max-w-[2027px] px-4 md:mt-[84px]">
+      <div className="flex flex-col items-center gap-[34px] md:gap-[40px]">
+        <div className="flex max-w-[680px] flex-col items-center gap-[16px] md:gap-[20px]">
+          <div className="section-badge h-[42px] w-full max-w-[268px] justify-center px-0 md:h-[48px] md:max-w-[292px] lg:h-[53px] lg:max-w-[311px]">
             <div className="section-badge-dot" />
             <span>Utilizado por marcas reais</span>
           </div>
-          <div className="flex w-full flex-col items-center gap-[18px]">
+          <div className="flex w-full flex-col items-center gap-[14px] md:gap-[16px]">
             <h2 className="section-title">
               Modelos desenvolvidos usando a Brand Collective ©
             </h2>
@@ -27,26 +27,23 @@ export default function GallerySection() {
           </div>
         </div>
 
-        <div className="flex w-full flex-col items-center justify-center gap-[28px] md:flex-row">
+        <div className="w-full overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:overflow-visible">
+          <div className="flex w-max snap-x snap-mandatory gap-[16px] px-1 sm:gap-[18px] md:gap-[20px] lg:w-full lg:justify-center lg:gap-[18px]">
           {galleryItems.map((item, i) => (
             <div
               key={item.src}
-              className="relative aspect-square w-full shrink-0 overflow-hidden rounded-[24px] md:w-[330px]"
+              className="relative aspect-square w-[78vw] shrink-0 snap-center overflow-hidden rounded-[18px] sm:w-[58vw] md:w-[40vw] lg:w-[248px] lg:rounded-[20px] xl:w-[292px]"
               style={{
-                background: "rgba(255, 255, 255, 0.05)",
-                border: "1px solid rgba(255, 255, 255, 0.1)",
-                boxShadow: "0px 1.26px 5.06px rgba(0,0,0,0.37), inset 0px 0.16px 0px 0.16px rgba(255,255,255,0.1)",
-                backdropFilter: "blur(13.1px)",
+                
               }}
             >
               <Image src={item.src} alt={`Modelo desenvolvido ${i + 1}`} fill className={item.imageClass} sizes="383px" />
-              <div
-                className={`absolute right-[21px] top-[24px] flex h-[37px] ${item.labelWidth} items-center justify-center rounded-full border border-primary/20 bg-white/[0.05] text-[14px] font-medium text-primary shadow-[0_5.8px_23px_rgba(0,0,0,0.37),inset_0_0.73px_0_rgba(255,255,255,0.1)] backdrop-blur-[4.35px]`}
-              >
+             
                 {item.label}
-              </div>
+              
             </div>
           ))}
+          </div>
         </div>
       </div>
     </section>
