@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins, Pragati_Narrow } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
 
@@ -17,6 +18,12 @@ const Pragati = Pragati_Narrow({
   display: "swap"
 });
 
+const impact = localFont({
+  src: "../public/Impact-Font/impact.ttf",
+  variable: "--font-impact-local",
+  display: "swap"
+});
+
 export const metadata: Metadata = {
   title: "Brand Collective - Crie sua marca ou coleção em minutos",
   description: "Mockups profissionais, vetores editáveis e mockups 3D reunidos em um único acesso. Do iniciante a quem já tem marca, tudo que você precisa pra criar ou lançar está aqui.",
@@ -30,7 +37,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${poppins.variable} ${Pragati.variable} font-sans h-full antialiased`}
+      className={`${poppins.variable} ${Pragati.variable} ${impact.variable} font-sans h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

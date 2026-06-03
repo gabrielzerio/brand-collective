@@ -7,7 +7,21 @@ import NotificationPopUp from "../ui/NotificationPopUp";
 export default function Hero() {
   return (
     <div className="page-shell relative w-full pt-[34px] lg:min-h-[820px]">
-      <div className="absolute left-[-45%] top-[-12%] z-0 h-[70vw] w-[70vw] rounded-full bg-accent/10 blur-[80px] pointer-events-none" />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-[62%] top-[-170px] z-0 h-[360px] w-[760px] -translate-x-1/2 rounded-full opacity-100 blur-[14px] md:top-[-210px] md:h-[430px] md:w-[1100px] lg:left-[64%] lg:top-[-250px] lg:h-[520px] lg:w-[1500px]"
+        style={{
+          background: "radial-gradient(ellipse at 58% 18%, rgba(224, 220, 1, 0.52) 0%, rgba(224, 220, 1, 0.26) 28%, rgba(224, 220, 1, 0.1) 52%, rgba(224, 220, 1, 0) 76%)",
+        }}
+      />
+      <Image
+        src="/Group_481207.svg"
+        alt=""
+        width={175}
+        height={409}
+        className="pointer-events-none absolute right-[-42px] top-[-58px] z-0 hidden w-[150px] rotate-[66deg] opacity-70 mix-blend-screen md:block lg:right-[72px] lg:top-[-72px] lg:w-[190px]"
+      />
+      {/* <div className="absolute left-[-45%] top-[-12%] z-0 h-[70vw] w-[70vw] rounded-full bg-accent/10 blur-[80px] pointer-events-none" /> */}
       <div className="absolute right-[-16%] top-[10%] z-0 h-[42vw] w-[42vw] rounded-full bg-accent/10 blur-[100px] pointer-events-none" />
       <FloatingMockups />
 
@@ -27,7 +41,6 @@ export default function Hero() {
       />
 
       <Menu />
-
       <section
         className="relative mt-[32px] flex flex-col px-4 text-[16px] md:mt-[64px] lg:mt-[78px] lg:flex-row lg:items-start lg:px-0"
         style={{ paddingLeft: "max(16px, calc((100vw - 1280px) / 2))" }}
@@ -93,7 +106,7 @@ export default function Hero() {
         </div>
       </section>
 
-      <BrandMarquee className="hidden lg:absolute lg:left-0 lg:right-0 lg:bottom-0 lg:block" />
+      <BrandMarquee className="hidden lg:absolute lg:left-0 lg:right-0 lg:bottom-[-34px] lg:z-[100] lg:block" />
     </div>
   );
 }
@@ -137,13 +150,13 @@ function Menu() {
   return (
     <div className="container relative z-10 mx-auto flex max-w-[1280px] flex-row items-center justify-center px-4">
       <div
-        className="flex h-[78px] w-[252px] flex-row items-center justify-center gap-0 rounded-full px-[30px] py-0 md:h-[108px] md:w-full md:justify-between md:px-[48px]"
+        className="border-white/10 border flex h-[78px] w-[252px] flex-row items-center justify-center gap-0 rounded-full px-[30px] py-0 md:h-[108px] md:w-full md:justify-between md:px-[48px]"
         style={{
           background: "rgba(255, 255, 255, 0.05)",
-          border: "1px solid rgba(255, 255, 255, 0.1)",
-          boxShadow: "0px 18.37px 73.46px rgba(0,0,0,0.37), inset 0px 2.3px 0px 2.3px rgba(255,255,255,0.1)",
-          backdropFilter: "blur(13.774px)",
-          WebkitBackdropFilter: "blur(13.774px)",
+          // border: "1px solid rgba(255, 255, 255, 0.1)",
+          // boxShadow: "inset 0px 2.3px 0px 2.3px #FFFFFF1A, 0px 18.37px 73.46px 0px #0000005E",
+          backdropFilter: "blur(27.547576904296875px)",
+          WebkitBackdropFilter: "blur(27.547576904296875px)",
         }}
       >
         <div className="flex-shrink-0">
@@ -173,13 +186,13 @@ function BrandMarquee({ className = "" }: { className?: string }) {
   const items = Array.from({ length: 8 });
 
   return (
-    <div className={`relative h-[100px] overflow-hidden md:h-[132px] ${className}`}>
+    <div className={`pointer-events-none relative h-[100px] overflow-visible md:h-[132px] ${className}`}>
       <div className="absolute left-1/2 top-[26px] flex w-[2300px] -translate-x-1/2 -rotate-[2.4deg] bg-primary text-black shadow-[0_0_40px_rgba(224,220,1,0.25)] md:top-[36px]">
         <div className="flex whitespace-nowrap py-2 md:py-4">
           {items.map((_, i) => (
-            <div key={i} className="flex items-center gap-4 px-3 md:px-5">
-              <span className="font-pragati text-[26px] font-bold leading-none md:text-[38px]">BRAND COLLECTIVE</span>
-              <span className="h-5 w-5 rounded-[4px] border-[3px] border-black md:h-8 md:w-8" />
+            <div key={i} className="flex items-center px-3 md:px-5">
+              <span className="font-impact text-[26px] leading-none md:text-[38px] px-10">BRAND COLLECTIVE</span>
+              <Image src="/fb06852bbb6c389a2fba2122b63e3b59ddcd0ff0.png" alt="Logo" width={40} height={40} className="h-auto w-[40px] object-contain" />
             </div>
           ))}
         </div>

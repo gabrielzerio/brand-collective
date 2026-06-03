@@ -1,8 +1,12 @@
-import { ShieldCheck, Clock, Star, Play } from "lucide-react";
+import { Play } from "lucide-react";
+import SecurityIcon from "../icons/securityIcon";
+import Image from "next/image";
+import ClockIcon from "../icons/clockIcon";
+import StarIcon from "../icons/starIcon";
 
 export default function VideoSection() {
   return (
-    <section className="mx-auto mt-[48px] max-w-[1120px] px-4 md:mt-[64px]">
+    <section className="mx-auto mt-[48px] max-w-[1220px] px-4 md:mt-[64px]">
       <div className="flex flex-col items-center gap-[26px] md:gap-[32px]">
         <div className="flex max-w-[820px] flex-col items-center gap-[14px] md:gap-[16px]">
           <div className="section-badge">
@@ -11,9 +15,13 @@ export default function VideoSection() {
           </div>
 
           <div className="flex w-full flex-col items-center gap-[12px] md:gap-[14px]">
-            <h2 className="section-title">Assista ao vídeo abaixo</h2>
+            <h2 className="section-title">
+              Assista ao <p className="text-primary inline">vídeo abaixo</p>
+            </h2>
             <p className="section-subtitle max-w-[760px]">
-              Veja tudo que você terá acesso e por que todo dono de marca precisa dos recursos da Brand Collective para criar ou lançar coleções de maneira rápida e prática.
+              Veja tudo que você terá acesso e por que todo dono de marca
+              precisa dos recursos da Brand Collective para criar ou lançar
+              coleções de maneira rápida e prática.
             </p>
           </div>
         </div>
@@ -32,17 +40,36 @@ export default function VideoSection() {
             <div className="relative h-[58px] w-[58px] md:h-[66px] md:w-[66px] lg:h-[72px] lg:w-[72px]">
               <div className="absolute inset-0 bg-black/35 rounded-full" />
               <div className="absolute inset-[7px] flex items-center justify-center rounded-full bg-black md:inset-[8px]">
-                <Play size={20} className="ml-1 text-white md:size-[24px] lg:size-[26px]" fill="white" />
+                <Play
+                  size={20}
+                  className="ml-1 text-white md:size-[24px] lg:size-[26px]"
+                  fill="white"
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="mx-auto mt-[36px] flex max-w-[820px] flex-col items-center justify-between gap-3 md:mt-[48px] md:flex-row md:gap-4">
-        <TrustItem icon={<ShieldCheck size={22} />} text="Garantia de 7 dias" />
-        <TrustItem icon={<Clock size={22} />} text="Acesso imediato" />
-        <TrustItem icon={<Star size={22} />} text="Usado por +200 Marcas" />
+      <div className="mx-auto mt-[36px] flex w-full max-w-[1218px] flex-col items-center justify-center gap-4 md:mt-[53px] lg:flex-row lg:gap-[22px]">
+        <TrustItem
+          icon={<SecurityIcon />}
+          label="Garantia de"
+          highlight="7 dias"
+          className="lg:w-[378px]"
+        />
+        <TrustItem
+          icon={<ClockIcon />}
+          label="Acesso"
+          highlight="imediato"
+          className="lg:w-[368px]"
+        />
+        <TrustItem
+          icon={<StarIcon />}
+          label="Usado por"
+          highlight="+200 Marcas"
+          className="lg:w-[448px]"
+        />
       </div>
     </section>
   );
@@ -52,12 +79,22 @@ function BlurredBrandMarquee() {
   const items = Array.from({ length: 8 });
 
   return (
-    <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 hidden w-[2300px] -translate-x-1/2 -translate-y-1/2 rotate-[3.2deg] overflow-hidden bg-primary text-black opacity-80 blur-[1px] md:flex">
-      <div className="flex whitespace-nowrap py-4">
+    <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 hidden w-[2300px] -translate-x-1/2 -translate-y-1/2 rotate-[3.2deg] overflow-hidden bg-primary text-black opacity-80 blur-[7px] md:flex">
+      <div className="flex items-center gap-10 whitespace-nowrap px-5 py-4">
         {items.map((_, i) => (
-          <div key={i} className="flex items-center gap-4 px-5">
-            <span className="font-pragati text-[38px] font-bold leading-none">BRAND COLLECTIVE</span>
-            <span className="h-8 w-8 rounded-[4px] border-[3px] border-black" />
+          <div key={i} className="contents">
+            <span className="font-impact text-7xl font-bold leading-none">
+              BRAND COLLECTIVE
+            </span>
+            <span className="relative h-[60px] w-[60px] shrink-0 overflow-hidden">
+              <Image
+                src="/fb06852bbb6c389a2fba2122b63e3b59ddcd0ff0.png"
+                alt="Logo"
+                width={60}
+                height={60}
+                className="absolute left-1/2 top-1/2 h-[60px] w-[60px] -translate-x-1/2 -translate-y-1/2  object-contain"
+              />
+            </span>
           </div>
         ))}
       </div>
@@ -65,29 +102,58 @@ function BlurredBrandMarquee() {
   );
 }
 
-function TrustItem({ icon, text }: { icon: React.ReactNode; text: string }) {
+function TrustItem({
+  icon,
+  label,
+  highlight,
+  className = "",
+}: {
+  icon: React.ReactNode;
+  label: string;
+  highlight: string;
+  className?: string;
+}) {
   return (
-    <div className="flex items-center gap-0">
+    <div className={`relative h-[86px] w-full max-w-[448px] ${className}`}>
       <div
-        className="relative z-10 flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-full md:h-[48px] md:w-[48px] lg:h-[52px] lg:w-[52px]"
+        className="absolute left-0 top-1/2 z-10 flex h-[75px] w-[75px] -translate-y-1/2 items-center justify-center rounded-full"
         style={{
           background: "linear-gradient(90deg, #E1FA00 18%, #EEFF55 100%)",
           border: "0.36px solid #CBE200",
-          boxShadow: "0px 0px 10.63px rgba(225,250,0,0.35), 0px 0px 5.31px rgba(225,250,0,0.25), inset 0px 0.35px 0px rgba(225,250,0,1)",
+          boxShadow:
+            "0px 0px 10px rgba(225,250,0,0.35), 0px 0px 20px rgba(225,250,0,0.18), inset 0px 0.354px 0px rgba(225,250,0,1)",
         }}
       >
-        <div className="text-black">{icon}</div>
+        <div className="flex h-[62px] w-[63px] items-center justify-center rounded-full border-[3px] border-black text-black [&_svg]:h-[36px] [&_svg]:w-[36px]">
+          {icon}
+        </div>
       </div>
+
       <div
-        className="-ml-[8px] rounded-full px-[18px] py-[11px] md:px-[22px] md:py-[13px] lg:px-[26px] lg:py-[14px]"
+        aria-hidden="true"
+        className="pointer-events-none absolute left-[48px] top-1/2 z-30 h-[70px] w-[58px] -translate-y-1/2 rounded-full"
         style={{
-          background: "rgba(255, 255, 255, 0.05)",
-          border: "1.31px solid rgba(255, 255, 255, 0.1)",
-          boxShadow: "0px 10.47px 41.87px rgba(0,0,0,0.37), inset 0px 1.31px 0px 1.31px rgba(255,255,255,0.1)",
-          backdropFilter: "blur(20.25px)",
+          background:
+            "radial-gradient(ellipse at left, rgba(225,250,0,0.28) 0%, rgba(225,250,0,0.1) 42%, rgba(225,250,0,0.025) 72%, rgba(225,250,0,0) 100%)",
+          filter: "blur(6px)",
+        }}
+      />
+
+      <div
+        className="absolute inset-y-0 left-[62px] right-0 z-20 flex min-w-0 items-center rounded-full pl-[50px] pr-[30px]"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.035))",
+          border: "1.308px solid rgba(255, 255, 255, 0.14)",
+          boxShadow:
+            "0px 10.467px 41.87px rgba(0,0,0,0.37), inset 0px 1.308px 0px rgba(255,255,255,0.1), inset 0px -1px 0px rgba(255,255,255,0.03)",
+          backdropFilter: "blur(10.126px)",
+          WebkitBackdropFilter: "blur(10.126px)",
         }}
       >
-        <span className="trust-text text-white text-sm md:text-base lg:text-xl">{text}</span>
+        <span className="font-pragati whitespace-nowrap text-[24px] font-bold leading-none tracking-[-0.02em] text-white [text-shadow:3.116px_3.116px_13.679px_#000] sm:text-[30px] md:text-[36px]">
+          {label} <span className="text-primary">{highlight}</span>
+        </span>
       </div>
     </div>
   );

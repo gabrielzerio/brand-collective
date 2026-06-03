@@ -23,7 +23,7 @@ const steps = [
 
 export default function StepsSection() {
   return (
-    <section className="mx-auto mt-[56px] max-w-[1180px] px-4 md:mt-[84px]">
+    <section className="mx-auto mt-[56px] max-w-[1180px] px-4 md:mt-[96px]">
       <div className="flex flex-col items-center gap-[34px] md:gap-[40px]">
         <div className="flex max-w-[660px] flex-col items-center gap-[16px] md:gap-[20px]">
           <div className="section-badge h-[42px] w-full max-w-[246px] justify-center px-0 md:h-[48px] md:max-w-[268px] lg:h-[53px] lg:max-w-[286px]">
