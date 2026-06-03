@@ -7,7 +7,7 @@ import Splatter from "../icons/splatter";
 
 export default function Hero() {
   return (
-    <div id="hero" className="page-shell relative w-full pt-[34px] lg:min-h-[820px]">
+    <div id="hero" className="page-shell relative w-full pt-[34px] lg:min-h-[98vh]">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute right-[-90px] top-[-72px] z-[1] h-[220px] w-[560px] rounded-full opacity-90 blur-[22px] md:right-[-120px] md:top-[-84px] md:h-[250px] md:w-[740px] lg:right-[-140px] lg:top-[-96px] lg:h-[280px] lg:w-[900px]"
@@ -87,27 +87,28 @@ export default function Hero() {
             className="w-[600px] object-contain"
           />
 
-          <NotificationPopUp
-            id="#4352"
-            time="há 32m"
-            items={2}
-            value="459,83"
-            rotation={-6.5}
-            className="absolute left-[68px] top-[-4px] z-20"
-          />
+          <div className="absolute left-1/2 top-1/2 z-20 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-[50px]">
+            <NotificationPopUp
+              id="#4352"
+              time="há 32m"
+              items={2}
+              value="459,83"
+              rotation={-6.5}
+            />
 
-          <NotificationPopUp
-            id="#4353"
-            time="há 12m"
-            items={1}
-            value="173,28"
-            rotation={8.4}
-            className="absolute bottom-[221px] right-[-12px] z-20"
-          />
+            <NotificationPopUp
+              id="#4353"
+              time="há 12m"
+              items={1}
+              value="173,28"
+              rotation={8.4}
+              className="translate-x-[34px]"
+            />
+          </div>
         </div>
       </section>
 
-      <BrandMarquee className="hidden lg:absolute lg:left-0 lg:right-0 lg:bottom-[-34px] lg:z-[100] lg:block" />
+      <BrandMarquee className="hidden lg:absolute lg:left-0 lg:right-0 lg:bottom-[-72px] lg:z-[100] lg:block" />
     </div>
   );
 }
@@ -185,17 +186,30 @@ function Menu() {
 
 function BrandMarquee({ className = "" }: { className?: string }) {
   const items = Array.from({ length: 8 });
+  const renderItems = (group: string) =>
+    items.map((_, i) => (
+      <div key={`${group}-${i}`} className="flex items-center px-3 md:px-5">
+        <span className="font-impact px-10 text-[26px] leading-none md:text-[38px]">
+          BRAND COLLECTIVE
+        </span>
+        <Image
+          src="/fb06852bbb6c389a2fba2122b63e3b59ddcd0ff0.png"
+          alt="Logo"
+          width={40}
+          height={40}
+          className="h-auto w-[40px] object-contain"
+        />
+      </div>
+    ));
 
   return (
     <div className={`pointer-events-none relative h-[100px] overflow-visible md:h-[132px] ${className}`}>
-      <div className="absolute left-1/2 top-[26px] flex w-[2300px] -translate-x-1/2 -rotate-[2.4deg] bg-primary text-black shadow-[0_0_40px_rgba(224,220,1,0.25)] md:top-[36px]">
-        <div className="flex whitespace-nowrap py-2 md:py-4">
-          {items.map((_, i) => (
-            <div key={i} className="flex items-center px-3 md:px-5">
-              <span className="font-impact text-[26px] leading-none md:text-[38px] px-10">BRAND COLLECTIVE</span>
-              <Image src="/fb06852bbb6c389a2fba2122b63e3b59ddcd0ff0.png" alt="Logo" width={40} height={40} className="h-auto w-[40px] object-contain" />
-            </div>
-          ))}
+      <div className="absolute left-1/2 top-[26px] flex w-[2300px] -translate-x-1/2 -rotate-[2.4deg] overflow-hidden bg-primary text-black shadow-[0_0_40px_rgba(224,220,1,0.25)] md:top-[36px]">
+        <div className="animate-brand-marquee flex w-max whitespace-nowrap py-2 md:py-4">
+          <div className="flex shrink-0">{renderItems("a")}</div>
+          <div className="flex shrink-0" aria-hidden="true">
+            {renderItems("b")}
+          </div>
         </div>
       </div>
     </div>

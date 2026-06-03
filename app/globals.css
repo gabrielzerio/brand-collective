@@ -28,6 +28,26 @@ body {
   .font-impact {
     font-family: var(--font-impact-local), Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   }
+
+  .animate-brand-marquee {
+    animation: brand-marquee 18s linear infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-brand-marquee {
+      animation: none;
+    }
+  }
+}
+
+@keyframes brand-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @layer components {
