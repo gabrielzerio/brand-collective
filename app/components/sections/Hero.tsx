@@ -3,26 +3,27 @@ import Badge from "../ui/Badge";
 import Button from "../ui/Button";
 import RatingBadge from "../ui/RatingBadge";
 import NotificationPopUp from "../ui/NotificationPopUp";
+import Splatter from "../icons/splatter";
 
 export default function Hero() {
   return (
-    <div className="page-shell relative w-full pt-[34px] lg:min-h-[820px]">
+    <div id="hero" className="page-shell relative w-full pt-[34px] lg:min-h-[820px]">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-[62%] top-[-170px] z-0 h-[360px] w-[760px] -translate-x-1/2 rounded-full opacity-100 blur-[14px] md:top-[-210px] md:h-[430px] md:w-[1100px] lg:left-[64%] lg:top-[-250px] lg:h-[520px] lg:w-[1500px]"
+        className="pointer-events-none absolute right-[-90px] top-[-72px] z-[1] h-[220px] w-[560px] rounded-full opacity-90 blur-[22px] md:right-[-120px] md:top-[-84px] md:h-[250px] md:w-[740px] lg:right-[-140px] lg:top-[-96px] lg:h-[280px] lg:w-[900px]"
         style={{
-          background: "radial-gradient(ellipse at 58% 18%, rgba(224, 220, 1, 0.52) 0%, rgba(224, 220, 1, 0.26) 28%, rgba(224, 220, 1, 0.1) 52%, rgba(224, 220, 1, 0) 76%)",
+          background: "radial-gradient(ellipse at 82% 22%, rgba(224, 220, 1, 0.34) 0%, rgba(224, 220, 1, 0.18) 22%, rgba(224, 220, 1, 0.06) 48%, rgba(224, 220, 1, 0) 74%)",
         }}
       />
-      <Image
-        src="/Group_481207.svg"
-        alt=""
-        width={175}
-        height={409}
-        className="pointer-events-none absolute right-[-42px] top-[-58px] z-0 hidden w-[150px] rotate-[66deg] opacity-70 mix-blend-screen md:block lg:right-[72px] lg:top-[-72px] lg:w-[190px]"
-      />
+      <div className="pointer-events-none absolute right-[-20px] top-[-64px] z-[2] hidden h-[250px] w-[330px] overflow-hidden opacity-90 mix-blend-screen md:block lg:right-[-8px] lg:top-[-70px] lg:h-[370px] lg:w-[390px]">
+        <div className="absolute right-[-22px] top-[-70px] w-[270px] rotate-[10deg] lg:w-[320px]">
+          <Splatter />
+        </div>
+      </div>
+      <div className="pointer-events-none absolute left-[-140px] top-[74px] z-0 w-[230px] rotate-[-6deg] opacity-90 mix-blend-screen md:left-[-150px] md:top-[94px] md:w-[260px] lg:left-[46px] lg:top-[168px] lg:w-[292px]">
+        <Splatter />
+      </div>
       {/* <div className="absolute left-[-45%] top-[-12%] z-0 h-[70vw] w-[70vw] rounded-full bg-accent/10 blur-[80px] pointer-events-none" /> */}
-      <div className="absolute right-[-16%] top-[10%] z-0 h-[42vw] w-[42vw] rounded-full bg-accent/10 blur-[100px] pointer-events-none" />
       <FloatingMockups />
 
       <Image

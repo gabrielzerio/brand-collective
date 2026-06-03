@@ -1,4 +1,5 @@
 import Hero from "./components/sections/Hero";
+import StickyPackNav from "./components/sections/StickyPackNav";
 import VideoSection from "./components/sections/VideoSection";
 import GallerySection from "./components/sections/GallerySection";
 import StepsSection from "./components/sections/StepsSection";
@@ -16,6 +17,7 @@ export default function Home() {
     <main className="relative isolate bg-black text-white min-h-screen overflow-x-hidden">
       <DecorativeBackground />
       <Hero />
+      <StickyPackNav />
       <VideoSection />
       <StepsSection />
       <WhySection />
